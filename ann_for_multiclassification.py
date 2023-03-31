@@ -6,11 +6,17 @@ import matplotlib.pyplot as plt
 import matplotlib.image as image
 # from PIL import Image
 
-X_train = np.loadtxt('F:\\Neural-Network---MultiClass-Classifcation-with-Softmax-main/train_X.csv', delimiter = ',').T
-Y_train = np.loadtxt('F:\\Neural-Network---MultiClass-Classifcation-with-Softmax-main/train_label.csv', delimiter = ',').T
+# X_train = np.loadtxt('F:\\Neural-Network---MultiClass-Classifcation-with-Softmax-main/train_X.csv', delimiter = ',').T
+# Y_train = np.loadtxt('F:\\Neural-Network---MultiClass-Classifcation-with-Softmax-main/train_label.csv', delimiter = ',').T
 
-X_test = np.loadtxt('F:\\Neural-Network---MultiClass-Classifcation-with-Softmax-main/test_X.csv', delimiter = ',').T
-Y_test = np.loadtxt('F:\\Neural-Network---MultiClass-Classifcation-with-Softmax-main/test_label.csv', delimiter = ',').T
+# X_test = np.loadtxt('F:\\Neural-Network---MultiClass-Classifcation-with-Softmax-main/test_X.csv', delimiter = ',').T
+# Y_test = np.loadtxt('F:\\Neural-Network---MultiClass-Classifcation-with-Softmax-main/test_label.csv', delimiter = ',').T
+
+X_train = np.loadtxt('m_nist_dataset_for_multiclassification/train_X.csv', delimiter = ',').T
+Y_train = np.loadtxt('m_nist_dataset_for_multiclassification/train_label.csv', delimiter = ',').T
+
+X_test = np.loadtxt('m_nist_dataset_for_multiclassification/test_X.csv', delimiter = ',').T
+Y_test = np.loadtxt('m_nist_dataset_for_multiclassification/test_label.csv', delimiter = ',').T
 
 # index = random.randrange(0, X_train.shape[1])
 # plt.imshow(X_train[:, index].reshape(28, 28), cmap = 'gray')
@@ -174,15 +180,16 @@ layer,cost=model(layer_dims,X,Y,X_test,Y_test,lr,3000)
 
 
 
-index = random.randrange(0, X_test.shape[1])
-plt.imshow(X_test[:, index].reshape(28, 28), cmap = 'gray')
+# index = random.randrange(0, X_test.shape[1])
+# plt.imshow(X_test[:, index].reshape(28, 28), cmap = 'gray')
 
-test= np.array(X_test[:,index].reshape(X_test.shape[0],1))
+# test= np.array(X_test[:,index].reshape(X_test.shape[0],1))
 
-for l in layer:
-    test=l.forward_propagation(test)
+# for l in layer:
+#     test=l.forward_propagation(test)
 
-print('Actual answer is = {} and the model answer is = {}'.format(np.argmax(Y_test[:,index],0),np.argmax(test)))
+# print('Actual answer is = {} and the model answer is = {}'.format(np.argmax(Y_test[:,index],0),np.argmax(test)))
 
-plt.show()
+# plt.show()
+
 
